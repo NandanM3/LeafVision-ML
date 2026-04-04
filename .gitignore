@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.env/
+
+# VS Code
+.vscode/
+
+# ML Models
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+
+# Datasets 
+Tomato_Leaf_Data/
+Tomato_Leaf_Data_Split/
+
+
