@@ -10,15 +10,43 @@ venv/
 # VS Code
 .vscode/
 
-# ML Models
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ML Models / checkpoints
 *.h5
 *.hdf5
 *.pt
 *.pth
 *.ckpt
+checkpoints/
+**/checkpoints/
 
-# Datasets 
+# Datasets
 Tomato_Leaf_Data/
 Tomato_Leaf_Data_Split/
+data/raw/
+data/processed/
+data/synthetic/
+data/field_validation/
 
+# Logs (regenerable)
+results/logs/
+*.log
 
+# Large generated result artifacts (keep tables/figures you've finalized, ignore working dumps)
+results/tmp/
+
+# Paper build artifacts (if using LaTeX later)
+*.aux
+*.toc
+*.out
+
+# Holding  results/paper text private until ready to share publicly
+# (remove these two lines when ready to make results/paper visible)
+results/
+paper/drafts/

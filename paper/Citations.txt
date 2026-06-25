@@ -1,0 +1,98 @@
+Research Paper Name: Research on plant disease identification based on CNN 
+Team - Sun et al.
+
+Background Citations:
+-	Traditional machine learning methods require manual feature engineering and have largely been replaced by 
+    deep learning approaches
+
+Informative Citations:
+-	Sun et al. reported 99.7% accuracy using FL-EfficientNet on the NPDD dataset.
+-	EfficientNet improves model efficiency by jointly scaling network depth, width, and image resolution.
+-	Focal Loss emphasizes difficult samples and can improve performance on imbalanced datasets.
+-	The authors highlighted model efficiency and deployment considerations through a lightweight architecture and 
+    a prototype web interface.
+-	Data augmentation (rotation, brightness, contrast, Gaussian noise) was used during training to improve 
+    generalization, but robustness was not explicitly evaluated.
+
+Gap:
+-	Testing is focused on NPDD images and not field images, the model is tested only on curated dataset
+-	A web app is created using flask and pytorch to show deployment feasibility but doesn’t prove agricultural 
+    viability 
+-	No clear evaluation under agricultural conditions
+
+
+
+
+Research Paper Name: Crop conditional Convolutional Neural Networks for massive multi-crop plant disease 
+                        classification over cell phone acquired images taken on real field condition
+Team - Artzai Picon et al.
+
+Background Citations
+-	Classical computer vision methods have limited expressive power and struggle to generalize to complex plant 
+    disease classification tasks. [Use while talking about how there has been a shift from traditional computer 
+    vision to CNNs]
+-	CNNs act as both hierarchical feature extractors and classifiers, enabling greater flexibility and 
+    performance for plant disease identification.[To talk about how CNNs have become dominant]
+
+Technical Citations
+-	Balanced accuracy provides a better evaluation metric for imbalanced plant datasets 
+
+Gap:
+-	“Although CNN models achieved very high performance on curated datasets, performance dropped substantially when 
+    evaluated on real field images.”[Use this to show how while CNN models have high accuracy this accuracy falls 
+    when working with field images]
+-	2 main issues with plant datasets used is that, firstly, only one type of disease is present in each leaf image. 
+    Second, the pictures are taking in a controlled environment with favorable conditions, which won’t be present 
+    in fields
+-	Another possible citation is in Barbedo (2016)
+
+
+
+
+Research Name: Using Deep Learning for Image-Based Plant Disease Detection
+Team: Mohanty et al.
+
+Note: Talk about greater performance and accuracy for newer models with citations and explanations. 
+        Check if older models work for this citation
+
+Finalised Citations List:
+Gap Citations 
+-	Mohanty et al.'s best-performing model achieved approximately 99% accuracy on curated PlantVillage images but only 31.4% and 31.7% accuracy on small real-world image datasets sourced from the internet, demonstrating a severe performance gap between benchmark and field conditions. 
+-	PlantVillage images were collected under controlled laboratory conditions, creating the possibility that CNN models learn dataset-specific visual artifacts rather than genuine disease characteristics , a limitation the authors explicitly acknowledge. 
+-	Controlled image acquisition conditions may substantially limit the generalizability of trained models to real agricultural environments. 
+-	Even when the classification task was simplified to disease identification assuming known crop species, real-world performance remained substantially below benchmark accuracy , suggesting image conditions rather than task complexity are the primary driver of performance degradation.
+-	Mohanty et al. state that a more diverse set of training data is needed to improve the accuracy on field-condition images, and that new image collection efforts should try to obtain images from many different perspectives, and ideally from settings that are as realistic as possible[Propose Synthetic Images as an alternative]
+
+Informative Citations
+-	Mohanty et al. evaluated CNN performance on color, grayscale, and leaf-segmented versions of the PlantVillage dataset specifically to investigate whether models were learning disease symptoms or dataset-specific visual artifacts such as uniform white backgrounds. 
+-	Transfer learning from ImageNet consistently outperformed training from scratch across all architecture and dataset configurations tested. 
+-	Color images achieved the highest mean F1 scores in benchmark testing, with grayscale images achieving a worst-case F1 of 0.8524, indicating that color information carries meaningful diagnostic signal for plant disease classification.
+-	Mohanty et al. demonstrated that CNN-based plant disease classification achieves strong performance under ideal conditions, establishing the benchmark that subsequent robustness evaluations must be measured against. 
+
+
+
+Background Citations
+-	Adjusting the train-test split ratio in favour of testing reduced model accuracy, but not to a degree indicating significant overfitting, supporting the use of standard 80-20 training partitions. 
+-	Mean precision, mean recall, and mean F1 score were used as standardised performance metrics, enabling consistent comparison across architectures and dataset configurations. 
+-	Mohanty et al. note that while the training of the model takes a lot of time (multiple hours on a high performance GPU cluster computer), the classification itself is very fast (less than a second on a CPU), and can thus easily be implemented on a smartphone.
+
+Methodology Citations
+-	Mohanty et al. acquired real-world validation images through automated search retrieval combined with manual visual verification, obtaining two small datasets of 121 and 119 images respectively , demonstrating a replicable approach to assembling field-condition test sets without large-scale data collection. 
+
+Secondary Citations From Mohanty Worth Tracking Down
+[These are papers Mohanty cites that I should read]
+High priority:
+-	Strange & Scott (2005) — crop disease economic impact, foundational
+-	Krizhevsky et al. (2012) — original AlexNet paper, worth skimming the introduction for understanding how the ImageNet era began
+-	Deng et al. (2009) — ImageNet dataset paper, one citation from this for your background section on transfer learning origins
+Medium priority:
+-	Russakovsky et al. (2015) — ILSVRC challenge paper, useful context for why benchmark datasets became dominant
+-	LeCun et al. (1989) — original CNN architecture, interesting historically but probably not needed in your paper
+
+
+
+
+[Identify Agriculture Citations]
+[Identify what image distorters are labelled by other papers]
+[Identify more citations for methodolgy]
+[Identify economics side citations]
